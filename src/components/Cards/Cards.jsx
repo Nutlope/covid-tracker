@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import CountUp from "react-countup";
 import cx from "classnames";
 
-// TODO: Troubleshoot why double destructuring of props didn't work here
+// TODO: Troubleshoot why double destructuring of props didn't work here, could have to do with how useeffect is used in app.js
 // data: { confirmed, recovered, deaths, lastUpdate }
 function Cards({ data }) {
   if (!data) {
@@ -13,7 +13,7 @@ function Cards({ data }) {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify-="center">
-        <Grid item component={Card} className={cx(styles.card, styles.infected)}>
+        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Infected
@@ -27,7 +27,7 @@ function Cards({ data }) {
             <Typography variant="body2">Number of COVID-19 cases</Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Recovered
@@ -41,7 +41,7 @@ function Cards({ data }) {
             <Typography variant="body2">Number of COVID-19 recoveries</Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Deaths
