@@ -13,7 +13,8 @@ This project uses:
 - Charts.js
 - Material UI
 
-API used: https://api.covidtracking.com
+API used: https://api.covidtracking.com.
+
 Based on: Adrian Hajdin's [video tutorial](https://www.youtube.com/watch?v=khJlrj3Y6Ls&ab_channel=JavaScriptMastery).
 
 ### Setup
