@@ -1,35 +1,73 @@
 import React, { useState, useEffect } from "react";
-import { fetchDailyData } from "../../api";
 import { Line, Bar } from "react-chartjs-2";
 
-function Chart() {
-  const [dailyData, setDailyData] = useState();
+import { fetchDailyData } from "../../api";
 
-  async function getDailyData() {
-    const fetchedDailyData = await fetchDailyData();
-    setDailyData(fetchedDailyData);
-  }
+import styles from "./Chart.module.css";
+
+const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
+  const [dailyData, setDailyData] = useState({});
 
   useEffect(() => {
-    getDailyData();
+    const fetchMyAPI = async () => {
+      const initialDailyData = await fetchDailyData();
+
+      setDailyData(initialDailyData);
+    };
+
+    fetchMyAPI();
   }, []);
 
-  const LineChart = (
-    (
-      <Line
-        data={{
-          labels: "",
-          datasets: [{}, {}],
-        }}
-      ></Line>
-    )
-  ) => {};
+  const barChart = confirmed ? (
+    <Bar
+      data={{
+        labels: ["Infected", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "People",
+            backgroundColor: ["rgba(0, 0, 255, 0.5)", "rgba(0, 255, 0, 0.5)", "rgba(255, 0, 0, 0.5)"],
+            data: [confirmed.value, recovered.value, deaths.value],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in ${country}` },
+      }}
+    />
+  ) : null;
 
-  return (
-    <div>
-      <h1>Chart</h1>
-    </div>
-  );
-}
+  const lineChart = dailyData[0] ? (
+    <Line
+      data={{
+        labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
+        datasets: [
+          {
+            data: dailyData.map((data) => data.confirmed),
+            label: "Infected",
+            borderColor: "#3333ff",
+            fill: true,
+          },
+          {
+            data: dailyData.map((data) => data.deaths),
+            label: "Deaths",
+            borderColor: "red",
+            backgroundColor: "rgba(255, 0, 0, 0.5)",
+            fill: true,
+          },
+          {
+            data: dailyData.map((data) => data.recovered),
+            label: "Recovered",
+            borderColor: "green",
+            backgroundColor: "rgba(0, 255, 0, 0.5)",
+            fill: true,
+          },
+        ],
+      }}
+    />
+  ) : null;
+
+  return <div className={styles.container}>{country ? barChart : lineChart}</div>;
+};
 
 export default Chart;
