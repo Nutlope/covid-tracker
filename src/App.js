@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Cards, CountryPicker, Chart, Footer } from "./components";
 import { fetchData } from "./api/";
 import styles from "./App.module.css";
-import image from "./image.png";
+import image from "./images/image.png";
 
 const App = () => {
   const [data, setData] = useState();
