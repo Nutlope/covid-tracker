@@ -1,9 +1,10 @@
 import React from "react";
+import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <div>
-      Made with love by <a href="twitter.com/nutlope">Hassan </a>
+    <div className={styles.container}>
+      Made by <a href="https://twitter.com/Nutlope"> Hassan </a>
     </div>
   );
 }
