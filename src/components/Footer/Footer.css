@@ -1,30 +1,25 @@
+/* Credit to Matthias's codepen for the animated heart code - https://codepen.io/mfritsch/pen/xbJMaa */
+
 .footer {
   /* background: #e9e9e9; */
   font-family: "Roboto", sans-serif;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-span {
   color: #666;
   font-size: 12px;
   display: block;
   position: relative;
-  bottom: 10px;
-  left: 50%;
-  top: 45%;
-  bottom: auto;
-  right: auto;
+  left: 5%;
   margin-top: 30px;
   transform: translateX(-50%) translateY(-50%);
-  text-align: center;
 }
-span a {
+
+.footer a {
   color: #000000;
   text-decoration: none;
 }
-span .fa {
+.footer .fa {
   color: #e90606;
   margin: 0 3px;
   font-size: 10px;
