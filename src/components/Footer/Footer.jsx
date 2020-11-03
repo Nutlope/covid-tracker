@@ -1,10 +1,13 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import "./Footer.css";
 
 function Footer() {
   return (
-    <div className={styles.container}>
-      Made by <a href="https://twitter.com/Nutlope"> Hassan </a>
+    <div className="footer">
+      <span>
+        Made with <i class="fa fa-heart pulse"></i> by {"  "}
+        <a href="https://twitter.com/nutlope">Hassan</a>
+      </span>
     </div>
   );
 }
