@@ -16,9 +16,7 @@ const App = () => {
 
   useEffect(() => {
     getData();
-
-    console.log("Data from app.js", data);
-  }, [data]);
+  }, []);
 
   const handleCountryChange = async (country) => {
     const data = await fetchData(country);
