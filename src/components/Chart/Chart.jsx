@@ -5,7 +5,7 @@ import { fetchDailyData } from "../../api";
 
 import styles from "./Chart.module.css";
 
-const Chart = ({ data, country }) => {
+const Chart = ({ data, state }) => {
   const [dailyData, setDailyData] = useState({});
   useEffect(() => {
     const fetchMyAPI = async () => {
@@ -24,14 +24,18 @@ const Chart = ({ data, country }) => {
         datasets: [
           {
             label: "People",
-            backgroundColor: ["rgba(0, 0, 255, 0.5)", "rgba(0, 255, 0, 0.5)", "rgba(255, 0, 0, 0.5)"],
-            data: [data.confirmed.value, data.recovered.value, data.deaths.value],
+            backgroundColor: [
+              "rgba(0, 0, 255, 0.5)",
+              "rgba(0, 255, 0, 0.5)",
+              "rgba(255, 0, 0, 0.5)",
+            ],
+            data: [data.confirmed, data.recovered, data.deaths],
           },
         ],
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
+        title: { display: true, text: `Current state in ${state}` },
       }}
     />
   ) : null;
@@ -66,7 +70,7 @@ const Chart = ({ data, country }) => {
     />
   ) : null;
 
-  return <div className={styles.container}>{country ? barChart : lineChart}</div>;
+  return <div className={styles.container}>{state ? barChart : lineChart}</div>;
 };
 
 export default Chart;

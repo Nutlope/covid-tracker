@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="footer">
       <span>
-        Made with <i class="fa fa-heart pulse"></i> by {"  "}
+        Made with <i className="fa fa-heart pulse"></i> by {"  "}
         <a href="https://twitter.com/nutlope">Hassan</a>
       </span>
     </div>
