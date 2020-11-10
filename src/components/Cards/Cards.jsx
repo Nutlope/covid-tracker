@@ -7,9 +7,8 @@ const Info = ({ data }) => {
   if (!data) {
     return "Loading...";
   }
-  console.log("here the data data from cards", data);
 
-  // TODO: Need to make this show states for the whole US instead of defaulting to a state
+  // TODO: Need to make this show numbers for US instead of defaulting to a state
   return (
     <div className={styles.container}>
       <Typography gutterBottom variant="h4" component="h2">
