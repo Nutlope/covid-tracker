@@ -9,7 +9,7 @@ export const fetchDataTwo = async (state) => {
 
   try {
     const { data } = await axios.get(changeableUrl);
-
+    console.log("data from API", data);
     return data.map(({ positive, recovered, death, dateChecked: date }) => ({
       confirmed: positive,
       recovered,
