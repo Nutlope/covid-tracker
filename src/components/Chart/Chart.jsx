@@ -7,6 +7,7 @@ import styles from "./Chart.module.css";
 
 const Chart = ({ data, state }) => {
   const [dailyData, setDailyData] = useState({});
+
   useEffect(() => {
     const fetchMyAPI = async () => {
       const initialDailyData = await fetchDailyData();
@@ -29,7 +30,7 @@ const Chart = ({ data, state }) => {
               "rgba(0, 255, 0, 0.5)",
               "rgba(255, 0, 0, 0.5)",
             ],
-            data: [data.confirmed, data.recovered, data.deaths],
+            data: [data[0].confirmed, data[0].recovered, data[0].deaths],
           },
         ],
       }}
