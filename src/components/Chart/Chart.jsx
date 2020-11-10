@@ -7,6 +7,8 @@ import styles from "./Chart.module.css";
 
 const Chart = ({ data, state }) => {
   const [dailyData, setDailyData] = useState({});
+  console.log("DailyData from Chart.js is ", dailyData);
+  console.log("data from Chart.js is ", data);
 
   useEffect(() => {
     const fetchMyAPI = async () => {
@@ -41,26 +43,26 @@ const Chart = ({ data, state }) => {
     />
   ) : null;
 
-  const lineChart = dailyData[0] ? (
+  const lineChart = data ? (
     <Line
       data={{
-        labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
+        labels: data.map(({ date }) => new Date(date).toLocaleDateString()),
         datasets: [
           {
-            data: dailyData.map((data) => data.confirmed),
+            data: data.map((data) => data.confirmed),
             label: "Infected",
             borderColor: "#3333ff",
             fill: true,
           },
           {
-            data: dailyData.map((data) => data.deaths),
+            data: data.map((data) => data.deaths),
             label: "Deaths",
             borderColor: "red",
             backgroundColor: "rgba(255, 0, 0, 0.5)",
             fill: true,
           },
           {
-            data: dailyData.map((data) => data.recovered),
+            data: data.map((data) => data.recovered),
             label: "Recovered",
             borderColor: "green",
             backgroundColor: "rgba(0, 255, 0, 0.5)",
@@ -71,7 +73,8 @@ const Chart = ({ data, state }) => {
     />
   ) : null;
 
-  return <div className={styles.container}>{state ? barChart : lineChart}</div>;
+  return <div className={styles.container}>{lineChart}</div>;
+  // return <div className={styles.container}>{state ? barChart : lineChart}</div>;
 };
 
 export default Chart;
