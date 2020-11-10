@@ -11,29 +11,32 @@ const Info = ({ data }) => {
   // TODO: Need to make this show numbers for US instead of defaulting to a state
   return (
     <div className={styles.container}>
-      <Typography gutterBottom variant="h4" component="h2">
-        United States
+      <Typography gutterBottom variant="h4" component="h2" className={styles.title}>
+        United States Covid-19 Cases
+      </Typography>
+      <Typography className={styles.subtitle}>
+        Last updated: {new Date(data[0].date).toDateString()}
       </Typography>
       <Grid container spacing={3} justify="center">
         <CardComponent
           className={styles.infected}
           cardTitle="Infected"
           value={data[0].confirmed}
-          lastUpdate={data[0].date}
+          // lastUpdate={data[0].date}
           cardSubtitle="Number of active cases from COVID-19."
         />
         <CardComponent
           className={styles.recovered}
           cardTitle="Recovered"
           value={data[0].recovered}
-          lastUpdate={data[0].date}
+          // lastUpdate={data[0].date}
           cardSubtitle="Number of recoveries from COVID-19."
         />
         <CardComponent
           className={styles.deaths}
           cardTitle="Deaths"
           value={data[0].deaths}
-          lastUpdate={data[0].date}
+          // lastUpdate={data[0].date}
           cardSubtitle="Number of deaths caused by COVID-19."
         />
       </Grid>

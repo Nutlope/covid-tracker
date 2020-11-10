@@ -21,7 +21,7 @@ export const fetchDataTwo = async (state) => {
   }
 };
 
-export const fetchDailyData = async () => {
+export const fetchUSData = async () => {
   try {
     const { data } = await axios.get("https://api.covidtracking.com/v1/us/daily.json");
 
