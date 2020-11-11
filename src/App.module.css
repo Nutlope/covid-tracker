@@ -1,6 +1,6 @@
-body {
+/* body {
   background-color: rgb(250, 250, 250);
-}
+} */
 
 .container {
   display: flex;
@@ -9,8 +9,10 @@ body {
 }
 
 .image {
-  width: 370px;
-  margin-top: 50px;
+  width: 470px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 
 @media only screen and (max-width: 770px) {

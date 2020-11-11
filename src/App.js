@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Cards, StatePicker, Chart, Footer } from "./components";
 import { fetchDataTwo, fetchUSData } from "./api/";
 import styles from "./App.module.css";
-import image from "./images/image.png";
+import image6 from "./images/covid_image_2.png";
 
 const App = () => {
   const [data, setData] = useState();
@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <div className={styles.container}>
-      <img className={styles.image} src={image} alt="COVID-19" />
+      <img className={styles.image} src={image6} alt="COVID-19" />
       <Cards data={usData} />
       <StatePicker handleStateChange={handleStateChange} />
       <Chart data={data} state={state} />

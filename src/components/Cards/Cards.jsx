@@ -32,7 +32,7 @@ const Info = ({ data }) => {
           className={styles.deaths}
           cardTitle="Deaths"
           value={data[0].deaths}
-          cardSubtitle="Number of deaths caused by COVID-19."
+          cardSubtitle="Number of deaths from COVID-19."
         />
       </Grid>
     </div>
