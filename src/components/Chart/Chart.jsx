@@ -5,11 +5,11 @@ import { Line } from "react-chartjs-2";
 import styles from "./Chart.module.css";
 
 const Chart = ({ data, state }) => {
-  if (data) {
-    data.reverse();
-    console.log("reversed data", data);
-    console.log("The type of data is", typeof data);
-  }
+  // if (data) {
+  //   data.reverse();
+  //   console.log("reversed data", data);
+  //   console.log("The type of data is", typeof data);
+  // }
 
   console.log("data from chart.js", data);
 

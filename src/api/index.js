@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchDataTwo = async (state) => {
-  let changeableUrl = "https://api.covidtracking.com/v1/states/al/daily.json";
+  let changeableUrl = "https://api.covidtracking.com/v1/us/daily.json";
 
   if (state) {
     changeableUrl = `https://api.covidtracking.com/v1/states/${state}/daily.json`;
