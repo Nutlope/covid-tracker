@@ -6,3 +6,11 @@
     margin: 2% 0 !important;
   }
 }
+.subtitle {
+  color: darkgrey;
+  font-style: italic;
+}
+
+.subtitle span {
+  color: black;
+}

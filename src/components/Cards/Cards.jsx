@@ -21,18 +21,21 @@ const Info = ({ data }) => {
           cardTitle="Infected"
           value={data[0].confirmed}
           cardSubtitle="Number of active cases from COVID-19."
+          added={data[0].positiveIncrease.toLocaleString()}
         />
         <CardComponent
-          className={styles.recovered}
-          cardTitle="Recovered"
-          value={data[0].recovered}
-          cardSubtitle="Number of recoveries from COVID-19."
+          className={styles.hospitalized}
+          cardTitle="Hospitalized"
+          value={data[0].hospitalized}
+          cardSubtitle="Current hospitalized people from COVID-19."
+          added={data[0].hospitalizedIncrease.toLocaleString()}
         />
         <CardComponent
           className={styles.deaths}
           cardTitle="Deaths"
           value={data[0].deaths}
           cardSubtitle="Number of deaths from COVID-19."
+          added={data[0].deathIncrease.toLocaleString()}
         />
       </Grid>
     </div>
