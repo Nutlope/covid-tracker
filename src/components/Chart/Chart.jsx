@@ -11,7 +11,7 @@ const Chart = ({ data, state }) => {
   //   console.log("The type of data is", typeof data);
   // }
 
-  console.log("data from chart.js", data);
+  // console.log("data from chart.js", data);
 
   // const nivoLineChart = data ? (
   //   <ResponsiveLine
