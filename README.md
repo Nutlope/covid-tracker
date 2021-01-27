@@ -22,3 +22,8 @@ Based on: Adrian Hajdin's [video tutorial](https://www.youtube.com/watch?v=khJlr
 1. Clone the github repo
 2. Run `npm install` in the terminal
 3. Run `npm start` to launch a local demo
+
+### Future Work
+- [ ] Replace Charts.js with something more attractive
+- [ ] Include additional insights
+- [ ] Implement a tooltip interactive chart of the US
